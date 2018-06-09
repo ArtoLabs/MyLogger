@@ -6,7 +6,6 @@ setup(
     version='0.1',
     packages=['mylogger'],
     license='MIT',
-    long_description=open('README.txt').read(),
     keywords='log logging logger',
     url='http://github.com/artolabs/mylogger',
     author='ArtoLabs',
