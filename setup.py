@@ -2,15 +2,15 @@ from setuptools import setup, find_packages
 
 setup(
     python_requires='>=3.0',
-    name='MyLogger',
+    name='ScreenLogger',
     version='0.1',
-    packages=['mylogger'],
+    packages=['screenlogger'],
     license='MIT',
     keywords='log logging logger',
-    url='http://github.com/artolabs/mylogger',
+    url='http://github.com/artolabs/screenlogger',
     author='ArtoLabs',
     author_email='artopium@gmail.com',
-    py_modules=['mylogger'],
+    py_modules=['screenlogger'],
     include_package_data=True,
     zip_safe=False
 )
