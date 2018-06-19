@@ -2,35 +2,38 @@
 
 import logging
 import time
+import os
 
-LOGFORMAT = "%(asctime)s %(levelname)s - %(message)s - %(pathname)s"
-logging.basicConfig(filename = "error.log", level = logging.ERROR, format = LOGFORMAT)
-logger = logging.getLogger()
 
 class Msg:
 
-    def __init__(self, mode=None):
+
+    def __init__(self, filename="error.log", 
+            mode=None):
         self.mode = mode
+        path = os.path.dirname(
+            os.path.abspath(__file__)) 
+            + "/" + filename
+        LOGFORMAT = "%(asctime)s %(levelname)s - "
+                    + "%(message)s - %(pathname)s"
+        logging.basicConfig(filename = path, 
+                            level = logging.ERROR, 
+                            format = LOGFORMAT)
+        self.logger = logging.getLogger()
+
 
     def message(self, msg):
         if self.mode != "quiet":
             print (msg)
-        logger.info(msg)
+        self.logger.info(msg)
         time.sleep(0.05)
+
 
     def error_message(self, msg):
         if self.mode != "quiet":
             print (msg)
-        logger.error(msg)
+        self.logger.error(msg)
         time.sleep(0.05)
-
-
-# Run as main
-
-if __name__ == "__main__":
-
-    a = msg()
-    a.message("Msg class is up and running.")
 
 
 # EOF

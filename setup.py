@@ -3,7 +3,7 @@ from setuptools import setup, find_packages
 setup(
     python_requires='>=3.0',
     name='ScreenLogger',
-    version='0.1',
+    version='1.1',
     packages=['screenlogger'],
     license='MIT',
     keywords='log logging logger',
