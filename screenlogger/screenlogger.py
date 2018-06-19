@@ -8,14 +8,16 @@ import os
 class Msg:
 
 
-    def __init__(self, filename="error.log", 
-            mode=None):
+    def __init__(self, filename="error.log",
+                        path=None,
+                        mode=None):
         self.mode = mode
-        path = os.path.dirname(
-            os.path.abspath(__file__)) 
-            + "/" + filename
-        LOGFORMAT = "%(asctime)s %(levelname)s - "
-                    + "%(message)s - %(pathname)s"
+        if path is None:
+            path = (os.path.dirname(
+                os.path.abspath(__file__)) 
+                + "/" + filename)
+        LOGFORMAT = ("%(asctime)s %(levelname)s - "
+                    + "%(message)s - %(pathname)s")
         logging.basicConfig(filename = path, 
                             level = logging.ERROR, 
                             format = LOGFORMAT)
