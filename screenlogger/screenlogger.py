@@ -16,6 +16,8 @@ class Msg:
             path = (os.path.dirname(
                 os.path.abspath(__file__)) 
                 + "/" + filename)
+        else:
+            path = path + "/" + filename
         LOGFORMAT = ("%(asctime)s %(levelname)s - "
                     + "%(message)s - %(pathname)s")
         logging.basicConfig(filename = path, 
